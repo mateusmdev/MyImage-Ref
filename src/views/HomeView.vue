@@ -36,13 +36,13 @@ import mockData from './../../mockedData.json'
 
     .wrapper {
       column-count: 5;
-      column-gap: 0.7rem;
+      column-gap: 0.5rem;
       overflow-y: auto;
       break-inside: avoid;
       page-break-inside: avoid;
 
       .image-item {
-        margin-bottom: 0.7rem
+        margin-bottom: 0.5rem
       }
     }
   }
