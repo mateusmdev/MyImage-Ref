@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import Header from './components/Header.vue'
+
 </script>
 
 <template>
-  <header>
-  </header>
+  <Header />
 
   <main>
     <RouterView />
@@ -12,4 +13,7 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
+main {
+  padding: 1rem;
+}
 </style>
