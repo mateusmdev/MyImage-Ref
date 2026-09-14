@@ -32,7 +32,7 @@ const states = reactive({
 						:alt="item.alt" 
 						:icon="item.icon"
 						:isActive="states.activeLinkIndex === index"
-						@click="states.activeLinkIndex = index"
+						@click.prevent="states.activeLinkIndex = index"
 					>
 					</HeaderItem>
 				</li>
@@ -46,6 +46,8 @@ header {
 	border-right: 2px solid #F4F4F6;
   width: 180px;
 	padding: 0.7rem;
+	position: fixed;
+	height: 100%;
 
 	li {
 		margin-bottom: 0.7rem;

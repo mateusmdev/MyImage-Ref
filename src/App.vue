@@ -15,5 +15,9 @@ import Header from './components/Header.vue'
 <style scoped>
 main {
   padding: 1rem;
+  width: calc(100% - 180px);
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 </style>
