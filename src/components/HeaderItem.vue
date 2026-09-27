@@ -19,7 +19,7 @@ const props = defineProps<PropsDefinition>()
     <component 
       :is="props.icon" 
       class="icon" 
-      :color="props.isActive ? '#09090B' : '#F4F4F6'"
+      :color="props.isActive ? '#060608' : '#858585'"
     />
     {{ props.name }}
   </a>
@@ -31,11 +31,13 @@ a {
   padding: 0.5rem 0.7rem;
   align-items: center;
   font-size: 0.9rem;
-  color: #F4F4F6;
+  color: #858585;
+  border-radius: 4px;
+  font-weight: bold;
 
   &.selected {
-    background: #F4F4F6;
-    color: #09090B;
+    background: #f4f4f6;
+    color: #060608;
   }
 
   .icon {

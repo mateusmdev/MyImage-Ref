@@ -24,6 +24,7 @@ import mockData from './../../mockedData.json'
 <style scoped lang="scss">
 .layout-area {
   //border: 1px solid red;
+  height: 100%;
 
   h1 {
     font-size: 1.4rem;
@@ -31,7 +32,8 @@ import mockData from './../../mockedData.json'
   }
 
   .image-area {
-    height: 500px;
+    max-height: 85%;
+    // max-height: 500px;
     overflow-y: auto;
 
     .wrapper {

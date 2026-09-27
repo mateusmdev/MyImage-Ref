@@ -41,6 +41,7 @@ const props = defineProps<PropsDefinition>()
       height: 100%;
       object-fit: cover;
       object-position: left top;
+      border-radius: 4px;
     }
   }
 }
