@@ -17,6 +17,8 @@ const headerItemList = [
 	}
 ]
 
+const emit = defineEmits(['toggleMenu'])
+
 const states = reactive({
 	activeLinkIndex: 0,
 	isOpen: false,
@@ -25,6 +27,7 @@ const states = reactive({
 const methods = {
 	toggleSideBar () {
 		states.isOpen = !states.isOpen
+		emit('toggleMenu', states.isOpen)
 	}
 }
 </script>
@@ -36,7 +39,7 @@ const methods = {
 		<button 
 			class="toggle-btn"
 			:class="{ 'is-open': states.isOpen }"
-			@click="states.isOpen = !states.isOpen"
+			@click="methods.toggleSideBar"
 		>
 			<div></div>
 			<div></div>

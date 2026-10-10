@@ -9,13 +9,15 @@ import mockData from './../../mockedData.json'
     <h1>Imagens</h1>
 
     <div class="image-area">
-      <div class="wrapper">
-        <ImageItem 
-          :src="src" 
-          v-for="(src, index) in mockData || []" 
-          :key="index"
-          class="image-item"
-        />
+      <div class="container">
+        <div class="wrapper">
+          <ImageItem 
+            :src="src" 
+            v-for="(src, index) in mockData || []" 
+            :key="index"
+            class="image-item"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -23,29 +25,38 @@ import mockData from './../../mockedData.json'
 
 <style scoped lang="scss">
 .layout-area {
-  // border: 1px solid red;
   height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 
   h1 {
     font-size: 1.4rem;
-    margin: 1.2rem 0;
-    margin-top: 3rem;
+    margin: 3rem 0 1.2rem;
+    flex-shrink: 0;
   }
 
   .image-area {
-    max-height: 85%;
-    // max-height: 500px;
-    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
 
-    .wrapper {
-      column-count: 5;
-      column-gap: 0.5rem;
+    .container {
+      height: 100%;
       overflow-y: auto;
-      break-inside: avoid;
-      page-break-inside: avoid;
+      overflow-x: hidden;
 
-      .image-item {
-        margin-bottom: 0.5rem
+      .wrapper {
+        column-count: 5;
+        column-gap: 0.5rem;
+
+        .image-item {
+          display: block;
+          width: 100%;
+          margin-bottom: 0.5rem;
+          break-inside: avoid;
+        }
       }
     }
   }
