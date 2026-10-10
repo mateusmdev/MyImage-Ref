@@ -23,12 +23,13 @@ import mockData from './../../mockedData.json'
 
 <style scoped lang="scss">
 .layout-area {
-  //border: 1px solid red;
+  // border: 1px solid red;
   height: 100%;
 
   h1 {
     font-size: 1.4rem;
     margin: 1.2rem 0;
+    margin-top: 3rem;
   }
 
   .image-area {

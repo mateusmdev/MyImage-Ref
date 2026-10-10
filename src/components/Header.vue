@@ -18,13 +18,30 @@ const headerItemList = [
 ]
 
 const states = reactive({
-	activeLinkIndex: 0
+	activeLinkIndex: 0,
+	isOpen: false,
 })
+
+const methods = {
+	toggleSideBar () {
+		states.isOpen = !states.isOpen
+	}
+}
 </script>
 
 <template>
-	<header>
-		<!-- <button></button> -->
+	<header 
+		:class="{ 'is-closed': !states.isOpen }"
+	>
+		<button 
+			class="toggle-btn"
+			:class="{ 'is-open': states.isOpen }"
+			@click="states.isOpen = !states.isOpen"
+		>
+			<div></div>
+			<div></div>
+			<div></div>
+		</button>
   	<nav>
     	<ul>
         <li v-for="(item, index) in headerItemList" :key="index">
@@ -34,6 +51,7 @@ const states = reactive({
 						:icon="item.icon"
 						:isActive="states.activeLinkIndex === index"
 						@click.prevent="states.activeLinkIndex = index"
+						:class="{'short-version': !states.isOpen}"
 					>
 					</HeaderItem>
 				</li>
@@ -43,6 +61,7 @@ const states = reactive({
 </template>
 
 <style scoped lang="scss">
+
 header {
 	border-right: 2px solid #e8e8e8;
   width: 180px;
@@ -50,19 +69,69 @@ header {
 	position: fixed;
 	height: 100%;
 	position: relative;
+	transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+	&.is-closed {
+		width: 75px;
+	}
 
 	.toggle-btn {
+		z-index: 5;
 		position: absolute;
-		right: -35px;
-		top: 1%;
-		width: 20px;
-		height: 20px;
-		border: 1px solid #e8e8e8;
-		border-radius: 50%;
-		background-color: #e8e8e8;
-		display: flex;
+		right: -50px;
+		top: 1.8%;
+		width: 32px;
+		height: 25px;
+
+		display: inline-flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		gap: 5px;
+
+		padding: 3px 3px;
+		border: none;
+		background: transparent;
+		color: #060608;
+
+		cursor: pointer;
+
+		&:focus-visible {
+			outline: 2px solid currentColor;
+			outline-offset: 4px;
+		}
+
+		div {
+			width: 100%;
+			height: 3px;
+			flex-shrink: 0;
+			background-color: currentColor;
+			border-radius: 999px;
+
+			translate: 0 0;
+			rotate: 0deg;
+
+			transition:
+				translate 300ms cubic-bezier(0.4, 0, 0.2, 1),
+				rotate 300ms cubic-bezier(0.4, 0, 0.2, 1),
+				opacity 300ms ease;
+		}
+
+		&.is-open {
+			div:nth-child(1) {
+				translate: 0 8px;
+				rotate: 45deg;
+			}
+
+			div:nth-child(2) {
+				opacity: 0;
+			}
+
+			div:nth-child(3) {
+				translate: 0 (-8px);
+				rotate: -45deg;
+			}
+		}
 	}
 
 	li {
