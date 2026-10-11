@@ -1,23 +1,34 @@
 <script setup lang="ts">
 import HeaderItem from './HeaderItem.vue';
 import HomeSvg from './icons/HomeSvg.vue';
+import AlbumSvg from './icons/AlbumSvg.vue';
+import SettingsSvg from './icons/SettingsSvg.vue';
 
 import { reactive } from 'vue'
 
 const headerItemList = [
 	{
-		name: 'Inicio',
+		name: 'Home',
 		alt: 'a home icon',
 		icon: HomeSvg
 	},
 	{
-		name: 'Inicio',
-		alt: 'a home icon',
-		icon: HomeSvg	
+		name: 'Albums',
+		alt: 'an album icon',
+		icon: AlbumSvg	
+	},
+	{
+		name: 'Settings',
+		alt: 'a setting icon',
+		icon: SettingsSvg	
 	}
 ]
 
-const emit = defineEmits(['toggleMenu'])
+type EmitDefinition = {
+	toggleMenu: [isOpen: boolean]
+}
+
+const emit = defineEmits<EmitDefinition>()
 
 const states = reactive({
 	activeLinkIndex: 0,
@@ -94,6 +105,7 @@ header {
 
 		padding: 3px 3px;
 		border: none;
+		outline: transparent;
 		background: transparent;
 		color: #060608;
 
