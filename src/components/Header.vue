@@ -10,17 +10,20 @@ const headerItemList = [
 	{
 		name: 'Home',
 		alt: 'a home icon',
-		icon: HomeSvg
+		icon: HomeSvg,
+		path: '/'
 	},
 	{
 		name: 'Albums',
 		alt: 'an album icon',
-		icon: AlbumSvg	
+		icon: AlbumSvg,	
+		path: '/albums'
 	},
 	{
 		name: 'Settings',
 		alt: 'a setting icon',
-		icon: SettingsSvg	
+		icon: SettingsSvg,	
+		path: '/settings'
 	}
 ]
 
@@ -66,6 +69,7 @@ const methods = {
 						:isActive="states.activeLinkIndex === index"
 						@click.prevent="states.activeLinkIndex = index"
 						:class="{'short-version': !states.isOpen}"
+						:path="item.path"
 					>
 					</HeaderItem>
 				</li>

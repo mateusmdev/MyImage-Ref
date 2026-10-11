@@ -5,15 +5,16 @@ type PropsDefinition = {
   name: string,
   alt?: string,
   icon: Component,
-  isActive: boolean
+  isActive: boolean,
+  path: string
 }
 
 const props = defineProps<PropsDefinition>()
 </script>
 
 <template>
-  <a 
-    href="#"
+  <RouterLink 
+    :to="props.path"
     :class="{selected: props.isActive}"
   >
     <component 
@@ -22,7 +23,7 @@ const props = defineProps<PropsDefinition>()
       :color="props.isActive ? '#060608' : '#858585'"
     />
     <span>{{ props.name }}</span>
-  </a>
+  </RouterLink>
 </template>
 
 <style scoped lang="scss">
