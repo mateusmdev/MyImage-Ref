@@ -46,20 +46,20 @@ const props = defineProps<PropsDefinition>()
   }
 
   .icon {
-    margin-right: 15px;
-    min-width: 27px;
-    margin-left: 1px;
+    margin-right: 0.938rem;
+    min-width: 1.688rem;
+    margin-left: 0.063rem;
   }
 
   &.short-version {
-    width: 50px;
+    width: 3.125rem;
 
     span {
       display: none;
     }
 
     .icon {
-      margin-right: 0px;
+      margin-right: 0;
     }
   }
 }

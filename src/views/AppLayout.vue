@@ -30,11 +30,11 @@ main {
   position: fixed;
   right: 0;
   top: 0;
-  width: calc(100% - 75px);
+  width: calc(100% - 4.688rem);
   transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1);
   
   &.is-open {
-    width: calc(100% - 180px);
+    width: calc(100% - 11.25rem);
   }
 }
 </style>

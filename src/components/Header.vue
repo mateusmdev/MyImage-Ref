@@ -82,7 +82,7 @@ const methods = {
 
 header {
 	border-right: 2px solid #e8e8e8;
-  width: 180px;
+  width: 11.25rem;
 	padding: 0.7rem;
 	position: fixed;
 	height: 100%;
@@ -90,24 +90,24 @@ header {
 	transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
 	&.is-closed {
-		width: 75px;
+		width: 4.688rem;
 	}
 
 	.toggle-btn {
 		z-index: 5;
 		position: absolute;
-		right: -50px;
+		right: -3.125rem;
 		top: 1.8%;
-		width: 32px;
-		height: 25px;
+		width: 2rem;
+		height: 1.563rem;
 
 		display: inline-flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 5px;
+		gap: 0.313rem;
 
-		padding: 3px 3px;
+		padding: 0.188rem 0.188rem;
 		border: none;
 		outline: transparent;
 		background: transparent;
@@ -122,10 +122,9 @@ header {
 
 		div {
 			width: 100%;
-			height: 3px;
+			height: 0.188rem;
 			flex-shrink: 0;
 			background-color: currentColor;
-			border-radius: 999px;
 
 			translate: 0 0;
 			rotate: 0deg;
@@ -138,7 +137,7 @@ header {
 
 		&.is-open {
 			div:nth-child(1) {
-				translate: 0 8px;
+				translate: 0 0.5rem;
 				rotate: 45deg;
 			}
 
@@ -147,7 +146,7 @@ header {
 			}
 
 			div:nth-child(3) {
-				translate: 0 (-8px);
+				translate: 0 (-0.5rem);
 				rotate: -45deg;
 			}
 		}

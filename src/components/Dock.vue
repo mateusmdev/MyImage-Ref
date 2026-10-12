@@ -59,7 +59,7 @@ const methods = {
 
 <style scoped lang="scss">
 div {
-  width: 150px;
+  width: 5.313rem;
   padding: 0.5rem 0.08rem;
   background-color: #f4f4f6;
   display: flex;
@@ -68,8 +68,8 @@ div {
   button {
     border: none;
     outline: none;
-    width: 25px;
-    aspect-ratio: 1;
+    width: 1.063rem;
+    height: 1.063rem;
     display: flex;
     align-items: center;
     cursor: pointer;
