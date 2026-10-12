@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Gallery from '@/components/Gallery.vue'; 
 import ImageItem from '@/components/ImageItem.vue';
 import Dock from '@/components/Dock.vue';
 import mockData from './../../mockedData.json'
@@ -14,8 +15,16 @@ import mockData from './../../mockedData.json'
         <Dock />
       </div>
     </div>
-
-    <div class="image-area">
+    <Gallery v-slot="{ viewMode }">
+      <ImageItem 
+        :src="src" 
+        v-for="(src, index) in mockData || []" 
+        :key="index"
+        class="image-item"
+        :viewMode="viewMode"
+      />
+    </Gallery>
+    <!-- <div class="image-area">
       <div class="container">
         <div class="wrapper">
           <ImageItem 
@@ -26,7 +35,7 @@ import mockData from './../../mockedData.json'
           />
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -70,12 +79,12 @@ import mockData from './../../mockedData.json'
         column-count: 5;
         column-gap: 0.5rem;
 
-        .image-item {
-          display: block;
-          width: 100%;
-          margin-bottom: 0.5rem;
-          break-inside: avoid;
-        }
+        // .image-item {
+        //   display: block;
+        //   width: 100%;
+        //   margin-bottom: 0.5rem;
+        //   break-inside: avoid;
+        // }
       }
     }
   }
