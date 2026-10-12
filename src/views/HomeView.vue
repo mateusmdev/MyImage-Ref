@@ -3,6 +3,11 @@ import Gallery from '@/components/Gallery.vue';
 import ImageItem from '@/components/ImageItem.vue';
 import Dock from '@/components/Dock.vue';
 import mockData from './../../mockedData.json'
+import { reactive } from 'vue';
+
+const states = reactive({
+  currentViewMode: 'mansory'
+})
 </script>
 
 <template>
@@ -12,30 +17,18 @@ import mockData from './../../mockedData.json'
       <h1>Imagens</h1>
 
       <div class="actions">
-        <Dock />
+        <Dock @changeViewMode="(value) => states.currentViewMode = value"/>
       </div>
     </div>
-    <Gallery v-slot="{ viewMode }">
+    <Gallery :currentViewMode="states.currentViewMode">
       <ImageItem 
         :src="src" 
         v-for="(src, index) in mockData || []" 
         :key="index"
         class="image-item"
-        :viewMode="viewMode"
+        :viewMode="states.currentViewMode"
       />
     </Gallery>
-    <!-- <div class="image-area">
-      <div class="container">
-        <div class="wrapper">
-          <ImageItem 
-            :src="src" 
-            v-for="(src, index) in mockData || []" 
-            :key="index"
-            class="image-item"
-          />
-        </div>
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -48,13 +41,11 @@ import mockData from './../../mockedData.json'
   overflow: hidden;
 
   .header-area {
-    // border: 1px solid red;
     margin: 3rem 0 1.2rem;
     display: flex;
     justify-content: space-between;
     
     .actions {
-      // border: 1px solid red;
       margin-top: -0.557rem;
       height: fit-content;
     }
@@ -62,30 +53,6 @@ import mockData from './../../mockedData.json'
     h1 {
       font-size: 1.4rem;
       flex-shrink: 0;
-    }
-  }
-
-  .image-area {
-    flex: 1;
-    min-height: 0;
-    overflow: hidden;
-
-    .container {
-      height: 100%;
-      overflow-y: auto;
-      overflow-x: hidden;
-
-      .wrapper {
-        column-count: 5;
-        column-gap: 0.5rem;
-
-        // .image-item {
-        //   display: block;
-        //   width: 100%;
-        //   margin-bottom: 0.5rem;
-        //   break-inside: avoid;
-        // }
-      }
     }
   }
 }

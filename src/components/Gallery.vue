@@ -3,10 +3,11 @@ import { reactive } from 'vue';
 
 type ViewMode = 'mansory' | 'card' | 'grid'
 
-const states = reactive({
-  viewMode: 'card'
-  // viewMode: 'mansory'
-})
+type PropsDefinition = {
+  currentViewMode: string
+}
+
+const props = defineProps<PropsDefinition>()
 </script>
 
 <template>
@@ -14,10 +15,9 @@ const states = reactive({
     <div class="container">
       <div 
         class="wrapper"
-        :class="states.viewMode"
+        :class="props.currentViewMode"
       >
         <slot 
-          :viewMode="states.viewMode"
           class="image-item"
         >
           Empty List

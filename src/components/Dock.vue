@@ -1,35 +1,53 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive, type Component } from 'vue'
 import MansorySvg from './../components/icons/MansorySvg.vue'
 import CardSvg from './../components/icons/CardSvg.vue'
 import GridSvg from './../components/icons/GridSvg.vue'
 
-const buttomViewList = [
+type ButtonType = {
+  viewName: string,
+  icon: Component
+}
+
+const buttonViewList: ButtonType[] = [
   {
-    viewName: 'mansory-view',
+    viewName: 'mansory',
     icon: MansorySvg,
   },
   {
-    viewName: 'card-view',
+    viewName: 'card',
     icon: CardSvg,
   },
   {
-    viewName: 'grid-view',
+    viewName: 'grid',
     icon: GridSvg,
   },
 ]
 
+type EmitDefinition = {
+  changeViewMode: [viewMode: string]
+}
+
+const emit = defineEmits<EmitDefinition>()
+
 const states = reactive({
-  currentViewMode: 'mansory-view'
+  currentViewMode: 'mansory'
 })
+
+const methods = {
+  handleClick(currentItem: ButtonType) {
+    states.currentViewMode = currentItem.viewName
+    emit('changeViewMode', currentItem.viewName)
+  }
+}
 
 </script>
 
 <template>
   <div>
     <button 
-      v-for="(item, index) in buttomViewList" :key="index"
-      @click="states.currentViewMode = item.viewName"
+      v-for="(item, index) in buttonViewList" :key="index"
+      @click="methods.handleClick(item)"
     >
       <component 
         :is="item.icon"
