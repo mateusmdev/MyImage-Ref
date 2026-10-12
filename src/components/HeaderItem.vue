@@ -16,6 +16,7 @@ const props = defineProps<PropsDefinition>()
   <RouterLink 
     :to="props.path"
     :class="{selected: props.isActive}"
+    class="router-link"
   >
     <component 
       :is="props.icon" 
@@ -27,7 +28,7 @@ const props = defineProps<PropsDefinition>()
 </template>
 
 <style scoped lang="scss">
-a {
+.router-link {
   display: flex;
   padding: 0.5rem 0.7rem;
   align-items: center;
@@ -46,7 +47,8 @@ a {
 
   .icon {
     margin-right: 15px;
-    min-width: fit-content;
+    min-width: 27px;
+    margin-left: 1px;
   }
 
   &.short-version {

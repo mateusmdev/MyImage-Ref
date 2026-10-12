@@ -1,12 +1,19 @@
 <script setup lang="ts">
 import ImageItem from '@/components/ImageItem.vue';
+import Dock from '@/components/Dock.vue';
 import mockData from './../../mockedData.json'
 </script>
 
 <template>
   <div class="layout-area">
 
-    <h1>Imagens</h1>
+    <div class="header-area">
+      <h1>Imagens</h1>
+
+      <div class="actions">
+        <Dock />
+      </div>
+    </div>
 
     <div class="image-area">
       <div class="container">
@@ -31,10 +38,22 @@ import mockData from './../../mockedData.json'
   flex-direction: column;
   overflow: hidden;
 
-  h1 {
-    font-size: 1.4rem;
+  .header-area {
+    // border: 1px solid red;
     margin: 3rem 0 1.2rem;
-    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    
+    .actions {
+      // border: 1px solid red;
+      margin-top: -0.557rem;
+      height: fit-content;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
   }
 
   .image-area {
