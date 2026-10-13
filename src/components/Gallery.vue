@@ -34,7 +34,7 @@ const props = defineProps<PropsDefinition>()
   overflow: hidden;
 
   .container {
-    height: 100%;
+    height: 91%;
     overflow-y: auto;
     overflow-x: hidden;
 

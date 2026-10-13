@@ -96,17 +96,17 @@ header {
 	.toggle-btn {
 		z-index: 5;
 		position: absolute;
-		right: -3.125rem;
-		top: 1.8%;
-		width: 2rem;
-		height: 1.563rem;
-
+		right: -2.5rem;
+		top: 2.35%;
+		width: 1.563rem;
+		height: 0.938rem;
+		
 		display: inline-flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 0.313rem;
-
+		gap: 0.25rem;
+		
 		padding: 0.188rem 0.188rem;
 		border: none;
 		outline: transparent;
@@ -122,7 +122,7 @@ header {
 
 		div {
 			width: 100%;
-			height: 0.188rem;
+			height: 0.125rem;
 			flex-shrink: 0;
 			background-color: currentColor;
 
@@ -137,7 +137,7 @@ header {
 
 		&.is-open {
 			div:nth-child(1) {
-				translate: 0 0.5rem;
+				translate: 0 0.375rem;
 				rotate: 45deg;
 			}
 
@@ -146,7 +146,7 @@ header {
 			}
 
 			div:nth-child(3) {
-				translate: 0 (-0.5rem);
+				translate: 0 (-0.375rem);
 				rotate: -45deg;
 			}
 		}
