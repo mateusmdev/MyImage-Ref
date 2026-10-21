@@ -42,7 +42,7 @@ const props = defineProps<PropsDefinition>()
 
       &.mansory {
         column-count: 5;
-        column-gap: 0.5rem;
+        column-gap: 0.3rem;
       }
 
       &.card {
@@ -52,7 +52,9 @@ const props = defineProps<PropsDefinition>()
       }
 
       &.grid {
-
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
       }
     }
   }

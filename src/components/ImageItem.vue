@@ -27,8 +27,9 @@ const props = defineProps<PropsDefinition>()
 .image-item {
   width: 100%;
   padding: 0;
+  margin: 0;
   break-inside: avoid;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.1rem;
   
   .image-wrapper {
     
@@ -61,5 +62,26 @@ const props = defineProps<PropsDefinition>()
       }
     }
   }
+
+  &.grid {
+    width: calc(20% - 0.4rem);
+    margin-bottom: 0.4rem;
+
+    .image-wrapper {
+      position: relative;
+      padding: 0 0 100% 0;
+      margin: 0;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        aspect-ratio: 1;
+      }
+    }
+  }
+  
 }
 </style>
