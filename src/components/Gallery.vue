@@ -42,19 +42,39 @@ const props = defineProps<PropsDefinition>()
 
       &.mansory {
         column-count: 5;
-        column-gap: 0.3rem;
+        column-gap: 0.1rem;
       }
 
       &.card {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(min(100%, 300px), 1fr)
+        );
+
+        gap: 0.125rem;
+        max-width: 100%;
+
+        &.image-item.card {
+          width: 100%;
+          min-width: 0;
+        }
       }
 
       &.grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(min(100%, 250px), 1fr)
+        );
+
+        gap: 0.125rem;
+        max-width: 100%;
+
+        &.image-item.card {
+          width: 100%;
+          min-width: 0;
+        }
       }
     }
   }

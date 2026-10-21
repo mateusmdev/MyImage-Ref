@@ -29,7 +29,7 @@ const props = defineProps<PropsDefinition>()
   padding: 0;
   margin: 0;
   break-inside: avoid;
-  margin-bottom: 0.1rem;
+  margin-bottom: -0.1008rem;
   
   .image-wrapper {
     
@@ -43,8 +43,8 @@ const props = defineProps<PropsDefinition>()
   }
   
   &.card {
-    width: calc(20% - 0.4rem);
-    margin-bottom: 0.4rem;
+    width: 100%;
+    margin-bottom: 0;
 
     .image-wrapper {
       // padding: 0 0 56.25% 0; -- Reference and Consultation
@@ -59,13 +59,14 @@ const props = defineProps<PropsDefinition>()
         bottom: 0;
         right: 0;
         aspect-ratio: 1;
+        object-position: center;
       }
     }
   }
 
   &.grid {
-    width: calc(20% - 0.4rem);
-    margin-bottom: 0.4rem;
+    width: 100%;
+    margin-bottom: 0;
 
     .image-wrapper {
       position: relative;
@@ -79,9 +80,9 @@ const props = defineProps<PropsDefinition>()
         bottom: 0;
         right: 0;
         aspect-ratio: 1;
+        object-position: center;
       }
     }
   }
-  
 }
 </style>
