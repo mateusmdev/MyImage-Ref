@@ -54,11 +54,6 @@ const props = defineProps<PropsDefinition>()
 
         gap: 0.125rem;
         max-width: 100%;
-
-        &.image-item.card {
-          width: 100%;
-          min-width: 0;
-        }
       }
 
       &.grid {
