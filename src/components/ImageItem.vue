@@ -43,7 +43,6 @@ const props = defineProps<PropsDefinition>()
   }
   
   &.card {
-    width: 100%;
     margin-bottom: 0;
 
     .image-wrapper {
@@ -65,7 +64,6 @@ const props = defineProps<PropsDefinition>()
   }
 
   &.grid {
-    width: 100%;
     margin-bottom: 0;
 
     .image-wrapper {

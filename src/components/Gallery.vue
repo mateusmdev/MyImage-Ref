@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
 
 type ViewMode = 'mansory' | 'card' | 'grid'
 
@@ -72,6 +71,10 @@ const props = defineProps<PropsDefinition>()
         }
       }
     }
+  }
+
+  &.album .wrapper.grid {
+    gap: 3vw;
   }
 }
 </style>

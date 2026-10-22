@@ -12,7 +12,6 @@ const states = reactive({
 
 <template>
   <div class="layout-area">
-
     <div class="header-area">
       <h1>Imagens</h1>
 
